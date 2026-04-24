@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картинка с надписью</title>
+    <style>
+        /* Убираем лишние отступы у страницы */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Контейнер для картинки и текста */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Растягиваем на всю высоту экрана */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Настройки самой картинки */
+        .container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Картинка заполнит экран, не растягиваясь */
+            z-index: 1;
+        }
+
+        /* Затемнение для картинки (чтобы текст лучше читался) */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Черный цвет с прозрачностью 40% */
+            z-index: 2;
+        }
+
+        /* Настройки текста */
+        .text {
+            position: relative;
+            z-index: 3;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Тень у букв */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Вместо ссылки ниже вставь путь к своей картинке -->
+        <img src="i.webp" alt="Фон">
+        
+        <div class="overlay"></div>
+
+        <div class="text">
+            Кажется что то скоро будет
+        </div>
+    </div>
+
+</body>
+</html>
